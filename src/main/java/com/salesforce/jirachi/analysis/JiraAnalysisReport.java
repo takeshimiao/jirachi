@@ -43,7 +43,7 @@ public class JiraAnalysisReport {
   private Map<Integer, Map<String, Long>> indexTagCountMap =
       new HashMap<Integer, Map<String, Long>>();
 
-  protected boolean addRawData(Object[] rawEntryData, Map<String, Long> tagCountMap) {
+  public boolean addRawData(Object[] rawEntryData, Map<String, Long> tagCountMap) {
     rawData.add(rawEntryData);
     this.indexTagCountMap.put((rawData.size() - 1), tagCountMap);
     return true;
@@ -98,6 +98,7 @@ public class JiraAnalysisReport {
     entry.setSlovedSubTaskTicketCount(new Long("" + rawEntry[12]));
     entry.setSlovedTaskTicketCount(new Long("" + rawEntry[13]));
     entry.setSlovedTestTicketCount(new Long("" + rawEntry[14]));
+    entry.setTagCountMap(this.indexTagCountMap.get(index));
     return entry;
   }
 

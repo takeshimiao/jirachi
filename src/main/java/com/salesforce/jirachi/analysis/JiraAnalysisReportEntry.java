@@ -253,8 +253,9 @@ public class JiraAnalysisReportEntry {
     return null;
   }
 
-  public Long setCountByTagName(String tagName, Long count) {
-    return this.tagCountMap.put(tagName, count);
+  protected boolean setTagCountMap(Map<String, Long> tagCountMap) {
+    this.tagCountMap = tagCountMap;
+    return true;
   }
 
   /*

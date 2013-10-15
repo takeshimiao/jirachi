@@ -123,8 +123,8 @@ public class JiraAnalysisReportRepository {
 
         assigneeId = rawEntryData[0] != null ? "" + rawEntryData[0] : null;
         // get assignee name
-        fillRawEntryData(con, rawEntryData, 1, SQL_GET_ASSIGNEE_NAME_PREFIX, "", "ASSIGNEE", null, null,
-          assigneeId);
+        fillRawEntryData(con, rawEntryData, 1, SQL_GET_ASSIGNEE_NAME_PREFIX,
+          SQL_GET_ASSIGNEE_NAME_SUFFIX, "ASSIGNEE", null, null, assigneeId);
 
         // HEAD:fill priority info.
         // Blocker
